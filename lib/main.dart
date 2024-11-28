@@ -56,22 +56,31 @@ class MyHomePage extends StatelessWidget {
     var pair = appState.current;
 
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            //Text('A random AWESOME idea:'),
-            BigCard(pair: pair),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-               
-                appState.getNext();
-              },
-              child: Text('Next'),
-            ),
-          ],
+      body: Column(
+        children: [
+          Text('A random idea:'),
+          Text(appState.current.asLowerCase),
+        ],
+      ),
+    );
+  }
+}
+/*
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Hello'),
         ),
+        body: MyHomePage(),
       ),
     );
   }
@@ -108,3 +117,4 @@ class BigCard extends StatelessWidget {
     );
   }
 }
+*/
